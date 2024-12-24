@@ -17,8 +17,11 @@ jobs:
       with:
         node-version: '22'  # 设置 Node.js 版本赖
 
+    - name: Install dependencies
+      run: pnpm install  # 使用 pnpm 安装所有依赖
+
     - name: Build project  # 构建项目
-      run: npm run docs:build  # 使用 pnpm 构建项目
+      run: pnpm run docs:build  # 使用 pnpm 构建项目
 
     - name: Upload to server  # 上传到服务器
       env:
