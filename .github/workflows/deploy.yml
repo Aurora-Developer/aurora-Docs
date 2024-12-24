@@ -38,6 +38,12 @@ jobs:
         echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
 
+        # 自动接收并添加服务器主机密钥
+        ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+
+        # 打印调试信息
+        echo "Uploading to server with IP: $SERVER_IP"
+
         # 将内容上传到服务器的指定目录
         rsync -avz --delete .vitepress/dist/ chenskiro@$SERVER_IP:/www/wwwroot/doc
 
