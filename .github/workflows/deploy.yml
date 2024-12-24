@@ -31,6 +31,9 @@ jobs:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}  # 部署私钥
         SERVER_IP: ${{ secrets.SERVER_IP }}    # 服务器 IP，从 GitHub Secrets 获取
       run: |
+        # 创建 ~/.ssh 目录
+        mkdir -p ~/.ssh
+
         # 添加私钥文件
         echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
