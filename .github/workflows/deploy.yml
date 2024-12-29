@@ -42,11 +42,12 @@ jobs:
         ssh-keyscan -p 22 -H $SERVER_IP >> ~/.ssh/known_hosts
 
         # 测试 SSH 连接
-        ssh -v -i ~/.ssh/id_rsa chenskiro@$SERVER_IP "echo 'SSH connection successful'"
+        ssh -v -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa chenskiro@$SERVER_IP "echo 'SSH connection successful'"
 
         # 打印调试信息
         echo "Uploading to server with IP: $SERVER_IP"
 
         # 将内容上传到服务器的指定目录
-        rsync -avz --delete .vitepress/dist/ chenskiro@$SERVER_IP:/www/wwwroot/doc
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" .vitepress/dist/ chenskiro@$SERVER_IP:/www/wwwroot/doc
+
 
