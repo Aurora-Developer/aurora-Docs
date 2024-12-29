@@ -43,4 +43,5 @@ jobs:
         # 打印调试信息
         echo "Uploading to server with IP: $SERVER_IP"
         # 将内容上传到服务器的指定目录
-        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" --rsync-path="sudo rsync" .vitepress/dist/ chenskiro@$SERVER_IP:/www/wwwroot/doc
+        rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" --exclude=".user.ini" --exclude=".htaccess" .vitepress/dist/ chenskiro@$SERVER_IP:/www/wwwroot/doc
+
