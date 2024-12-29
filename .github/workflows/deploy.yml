@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Checkout code  # 检出代码
-      uses: actions/checkout@v2  # 使用 checkout 操作拉取代码
+      uses: actions/checkout@v4  # 使用 checkout 操作拉取代码
 
     - name: Setup Node.js  # 设置 Node.js 环境
       uses: actions/setup-node@v2
@@ -34,12 +34,15 @@ jobs:
         # 创建 ~/.ssh 目录
         mkdir -p ~/.ssh
 
-        # 添加私钥文件
-        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+        # 添加私钥文件，移除多余字符
+        echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
 
         # 自动接收并添加服务器主机密钥
-        ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+        ssh-keyscan -p 22 -H $SERVER_IP >> ~/.ssh/known_hosts
+
+        # 测试 SSH 连接
+        ssh -v -i ~/.ssh/id_rsa chenskiro@$SERVER_IP "echo 'SSH connection successful'"
 
         # 打印调试信息
         echo "Uploading to server with IP: $SERVER_IP"
