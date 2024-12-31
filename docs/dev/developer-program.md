@@ -148,6 +148,9 @@ description: Aurora开发者计划介绍
   margin: 0.8rem 0;
   padding-left: 1.5rem;
   position: relative;
+  list-style: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
 .steps-list li::before {
