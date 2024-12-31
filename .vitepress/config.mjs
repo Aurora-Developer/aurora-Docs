@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "AUrora 文档",    //网站标题
+  title: "Aurora 文档",    //网站标题
   description: "提供使用帮助以及开发文档",   //网站描述
   base: "/",    //根目录
   logo: '/images/logo.png',   //网站logo
@@ -27,8 +27,8 @@ export default defineConfig({
     //导航栏配置
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/what-is-aurora' },
-      { text: 'API参考', link: '/reference/api' }
+      { text: '使用指南', link: '/guide/what-is-aurora' },
+      { text: '开发文档', link: '/reference/api' }
     ],
     //侧边栏配置
     sidebar: {
@@ -51,7 +51,7 @@ export default defineConfig({
       ],
       '/reference/': [
         {
-          text: 'API参考',
+          text: '开发文档',
           items: [
             { text: 'API文档', link: '/docs/reference/api' },
           ]
@@ -60,7 +60,8 @@ export default defineConfig({
     },
     //导航栏中展示带有图标的社交帐户链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Aurora-Developer/aurora-Docs' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/647566583/' }
     ],
     //更新时间
     lastUpdated: {
