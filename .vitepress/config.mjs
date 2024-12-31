@@ -7,6 +7,7 @@ export default defineConfig({
   base: "/",    //根目录
   logo: '/images/logo.png',   //网站logo
   srcDir: "docs",   //相对目录，用于存放md文件
+  appearance: 'dark', // 设置默认主题为暗色
   themeConfig: {    //主题配置
     //logo设置
     logo: "/images/logo.png",

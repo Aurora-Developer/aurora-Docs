@@ -12,7 +12,7 @@ hero:
       link: /guide/what-is-aurora
     - theme: alt
       text: 开发文档
-      link: /dev/api
+      link: /dev/developer-program
   image:
     src: https://www.aurora-sky.top/icon.png
     alt: Aurora
