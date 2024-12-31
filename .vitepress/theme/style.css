@@ -49,10 +49,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-1: var(--vp-c-orange-1);
+  --vp-c-brand-2: var(--vp-c-orange-2);
+  --vp-c-brand-3: var(--vp-c-orange-3);
+  --vp-c-brand-soft: var(--vp-c-orange-soft);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -68,6 +68,16 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-c-orange-1: #ff6b35;
+  --vp-c-orange-2: #ff7f50;
+  --vp-c-orange-3: #ff8c69;
+  --vp-c-orange-soft: rgba(255, 107, 53, 0.14);
+
+  --nav-bg-light: rgba(255, 255, 255, 0.95);
+  --nav-bg-dark: rgba(36, 36, 36, 0.3);
+  --nav-blur-effect: blur(30px);
+  --nav-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 /**
@@ -77,13 +87,13 @@
 :root {
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
-  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-bg: #ff4400;
   --vp-button-brand-hover-border: transparent;
   --vp-button-brand-hover-text: var(--vp-c-white);
-  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-bg: #ff5500;
   --vp-button-brand-active-border: transparent;
   --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-bg: #ff3300;
 }
 
 /**
@@ -94,14 +104,14 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    #bd34fe 30%,
-    #41d1ff
+    #ff6b35 30%,
+    #ff8c69
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    #bd34fe 50%,
-    #47caff 50%
+    #ff6b35 50%,
+    #ff8c69 50%
   );
   --vp-home-hero-image-filter: blur(44px);
 }
@@ -135,5 +145,121 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/* 自定义其他样式 */
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider-light);
+  background-color: var(--nav-bg-light) !important;
+  backdrop-filter: var(--nav-blur-effect);
+  -webkit-backdrop-filter: var(--nav-blur-effect);
+  box-shadow: var(--nav-shadow);
+}
+
+.VPNavBar {
+  background: transparent !important;
+}
+
+.VPNavBar .content-body {
+  background: transparent !important;
+}
+
+.VPNavBar.has-sidebar .content {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.VPSidebar {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.VPDoc {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 链接悬停效果 */
+.vp-doc a:hover {
+  color: var(--vp-c-brand-1);
+  transition: color 0.2s ease;
+}
+
+/* 按钮样式优化 */
+.VPButton.brand {
+  transition: all 0.2s ease;
+  font-weight: 700;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 68, 0, 0.3);
+}
+
+.VPButton.alt {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ff4400;
+  color: #ff4400;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.VPButton.alt:hover {
+  background-color: #ff4400;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 68, 0, 0.3);
+}
+
+/* 深色模式适配 */
+.dark {
+  /* 调整深色模式下的背景色 */
+  --vp-c-bg-alpha-with-backdrop: rgba(20, 20, 20, 0.7);
+}
+
+.dark .VPNav {
+  border-bottom: 1px solid var(--vp-c-divider-dark-1);
+  background-color: var(--nav-bg-dark) !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark .VPNavBar {
+  background: transparent !important;
+}
+
+.dark .VPNavBar .content-body {
+  background: transparent !important;
+}
+
+.dark .VPNavBar.has-sidebar .content {
+  background-color: var(--vp-c-bg-alpha-with-backdrop);
+  backdrop-filter: blur(10px);
+}
+
+.dark .VPSidebar {
+  background-color: var(--vp-c-bg-alpha-with-backdrop);
+  backdrop-filter: blur(10px);
+}
+
+.dark .VPDoc {
+  background-color: var(--vp-c-bg-alpha-with-backdrop);
+}
+
+/* 深色模式下的链接和按钮样式调整 */
+.dark .vp-doc a:hover {
+  color: var(--vp-c-orange-2);
+}
+
+.dark .VPButton.brand:hover {
+  box-shadow: 0 4px 12px rgba(255, 68, 0, 0.3);
+}
+
+/* 确保代码块在深色模式下清晰可见 */
+.dark .vp-doc div[class*='language-'] {
+  background-color: var(--vp-c-bg-alt);
+}
+
+/* 优化深色模式下的文本对比度 */
+.dark .vp-doc {
+  color: var(--vp-c-text-1);
 }
 

@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Aurora community"
+  name: "Aurora Community"
   text: "提供 Aurora 生态使用帮助及开发者文档"
   tagline: 获取使用帮助，了解开发方式
   actions:
@@ -12,7 +12,7 @@ hero:
       link: /guide/what-is-aurora
     - theme: alt
       text: 开发文档
-      link: /reference/api
+      link: /dev/api
   image:
     src: https://www.aurora-sky.top/icon.png
     alt: Aurora
@@ -41,9 +41,9 @@ features:
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #F04A13 30%, #FF8C42 70%);
 
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #FF8C42 50%, #F09213 50%);
   --vp-home-hero-image-filter: blur(44px);
 }
 
@@ -62,4 +62,17 @@ features:
 .VPHomeHero .image-container img {
   border-radius: 25px;
 }
+
+.VPHomeHero .container .actions .VPButton.brand {
+  background-color: #F04A13 !important;
+  border-color: #ff6633 !important;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.VPHomeHero .container .actions .VPButton.brand:hover {
+  background-color: #FF4600 !important;
+  border-color: #ff7744 !important;
+}
+
 </style>
