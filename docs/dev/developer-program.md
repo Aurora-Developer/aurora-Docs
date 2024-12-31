@@ -101,7 +101,7 @@ description: Aurora开发者计划介绍
 }
 
 .benefit-card ul {
-  list-style: none;
+  list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
@@ -112,6 +112,7 @@ description: Aurora开发者计划介绍
   position: relative;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+  list-style: none;
 }
 
 .benefit-card li:hover {
