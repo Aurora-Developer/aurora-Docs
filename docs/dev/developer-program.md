@@ -174,7 +174,8 @@ description: Aurora开发者计划介绍
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.contact-section a {
+.contact-section a
+{
   color: #ff7b00;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -309,9 +310,14 @@ Aurora开发者计划旨在支持优秀的开发者社区，为开发者提供�
   <div class="decorative-element"></div>
 </div>
 
+
+
 <div class="contact-section">
 
-## 📬 联系我们
+## 📬 资格申请
+
+ ### <a href="#">点此前往申请</a>
+
 
 如果您对开发者计划有任何疑问，请通过以下方式联系我们：
 
