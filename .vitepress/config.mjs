@@ -29,7 +29,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '使用指南', link: '/guide/what-is-aurora' },
-      { text: '开发文档', link: '/dev/api' }
+      { text: '开发文档', link: '/dev/dev-docs' }
     ],
     //侧边栏配置
     sidebar: {
@@ -55,7 +55,7 @@ export default defineConfig({
           text: '开发文档',
           items: [
             { text: '开发者计划', link: '/dev/developer-program' },
-            { text: 'API文档', link: '/dev/api' },
+            { text: 'API文档', link: '/dev/dev-docs' },
           ]
         }
       ]
